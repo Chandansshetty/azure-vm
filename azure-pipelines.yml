@@ -14,6 +14,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      Install-Module -Name Az -AllowClobber -Force
+      Import-Module Az
       $vmName = "First-VM"
       $resourceGroupName = "First-set"
       Start-AzVM -ResourceGroupName $resourceGroupName -Name $vmName
